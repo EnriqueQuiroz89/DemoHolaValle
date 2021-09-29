@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Responsive Image Maps jQuery Plugin</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta
+      name="viewport"
+      content="width=device-width, target-densitydpi=160dpi, initial-scale=1"
+    />
+    <script src="http://mattstow.com/js/ios-orientationchange-fix.min.js"></script>
+
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      div {
+        width: 100%;
+      }
+      img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        width: auto;
+      }
+      .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body style="">
+
+    <img
+    src="logo-mexico.svg"    
+    alt="Es el log"   
+    class="center" 
+  />
+
+    <div class="container mt-1">
+       <label for="formulario">Buscar en Valle de Bravo ...</label>
+      <input
+        type="text"
+        id="formulario"
+        class="form-control my-2"
+        placeholder="Tacos, Pizza, Nieve, cafe etc.."
+      />
+      <ul id="resultado"></ul>
+  
+       <label for="mapa">ó elige en el mapa tu proximo lugar favorito</label>
+      <img
+        id="mapa"
+        src="633x1280ComidaYBebida.jpeg"
+        width="633"
+        height="1280"
+        usemap="#lugares-valle"
+        alt=""
+      />
+
+      <map name="lugares-valle">
+        <area
+          href="#Heladeria-Michoacana"
+          title="Por su rico sabor casero"
+          alt="Heladeria La Michoacana"
+          coords="178,160,193,148,200,137,213,130,223,133,232,139,236,147,248,150,252,157,252,167,249,176,246,185,239,192,244,200,237,208,224,212,212,212,201,210,198,201,195,192,186,182,178,170"
+          shape="poly"
+        />
+        <area
+          href="#Cafeteria-Cielito-Lindo"
+          title="Tómate un respiro, tómate un Frape"
+          alt="Cafeteria Cielito Lindo"
+          coords="368,264,366,246,364,224,358,204,369,199,384,197,390,195,396,186,402,183,405,190,404,197,410,201,411,206,410,220,409,231,409,242,408,250,407,261,400,266,385,269"
+          shape="poly"
+        />
+        <area
+          href="#Cervezeria-Flor-De-Loto"
+          title="Keep walking"
+          alt="Cervezeria Flor de Loto"
+          coords="160,274,169,280,179,281,186,290,192,300,190,315,186,325,176,334,167,341,166,354,154,362,128,358,116,344,117,322,129,305,132,288"
+          shape="poly"
+        />
+        <area
+          href="#Hamburguesas-El-Rey-Leon"
+          title="No eres tú cuando tienes hambre"
+          alt="Hamburguesas El Rey Leon"
+          coords="327,348,346,351,356,359,359,371,362,382,361,391,347,400,327,404,312,400,307,384,304,370,309,360"
+          shape="poly"
+        />
+        <area
+          href="#Tacos-El-Gigante"
+          title="Para chuparse los dedos"
+          alt="Tacos El Gigante"
+          coords="174,427,196,422,215,418,229,420,238,431,247,454,247,472,244,482,226,484,204,476,185,468,172,454"
+          shape="poly"
+        />
+        <area
+          href="#Birria-Guadalajara"
+          title="Aquí tú eres el King"
+          alt="Birria Guadalajara"
+          coords="241,590,258,579,282,573,302,548,312,554,312,575,318,589,310,604,294,613,267,616,250,607"
+          shape="poly"
+        />
+        <area
+          href="#Ensaladas-Valle"
+          title="Come fresco"
+          alt="Ensaladas Valle Verde"
+          coords="56,638,83,643,100,652,106,674,98,696,75,706,51,706,31,688,25,660,35,643"
+          shape="poly"
+        />
+        <area
+          href="#Papas-El-Solecito"
+          title="A que no puedes comer sol una"
+          alt="Papas El Solecito"
+          coords="185,702,206,705,216,718,220,731,224,756,208,766,189,778,170,766,164,745,156,726,164,711,172,703"
+          shape="poly"
+        />
+        <area
+          href="#Pizzeria-Bella-Italia"
+          title="El secreto está en la masa"
+          alt="Pizzeria Bella Italia"
+          coords="339,762,353,746,371,735,385,734,392,757,399,780,402,796,381,791,358,781,346,770"
+          shape="poly"
+        />
+        <area
+          href="#Cervezeria-La-Pacifico"
+          title="Probablemente la mejor cerveza del mundo"
+          alt="Cervezeria La Pacifico"
+          coords="257,870,278,862,295,860,304,871,318,877,325,900,328,908,318,919,318,928,302,937,284,942,280,958,276,968,258,968,240,964,230,954,235,917"
+          shape="poly"
+        />
+      </map>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <script>
+      $(document).ready(function (e) {
+        $("img[usemap]").rwdImageMaps();
+
+        $("area").on("click", function () {
+          swal($(this).attr("alt"), $(this).attr("title"), "success");
+        });
+      });
+    </script>
+
+    <script>
+      const sitios = [
+        {
+          nombre: "Heladeria La Michoacana",
+          slogan: "Por su rico sabor casero",
+        },
+        {
+          nombre: "Cafeteria Cielito Lindo",
+          slogan: "Tómate un respiro, tómate un Frape",
+        },
+        { nombre: "Cervezeria Flor de Loto", slogan: "Keep walking" },
+        {
+          nombre: "Hamburguesas El Rey Leon",
+          slogan: "No eres tú cuando tienes hambre",
+        },
+        { nombre: "Tacos El Gigante", slogan: "Para chuparse los dedos" },
+        { nombre: "Birria Guadalajara", slogan: "Aquí tú eres el King" },
+        { nombre: "Ensaladas Valle Verde", slogan: "Come fresco" },
+        { nombre: "Papas El Solecito", slogan: "Papas El Solecito" },
+        {
+          nombre: "Pizzeria Bella Italia",
+          slogan: "El secreto está en la masa",
+        },
+        {
+          nombre: "Cervezeria La Pacifico",
+          slogan: "Probablemente la mejor cerveza del mundo",
+        },
+      ];
+
+      const formulario = document.querySelector("#formulario");
+      const resultado = document.querySelector("#resultado");
+
+      const filtrar = () => {
+        resultado.innerHTML = "";
+
+        const texto = formulario.value.toLowerCase();
+        for (let sitio of sitios) {
+          let nombre = sitio.nombre.toLowerCase();
+          if (nombre.indexOf(texto) !== -1) {
+            resultado.innerHTML += `<li><button  id="${sitio.nombre}" alt="${sitio.slogan}" class="btn btn-info mb-2">${sitio.nombre}</button></li>`;
+          }
+        }
+
+        var buttons = document.querySelectorAll(".btn");
+
+        vidaBotones(buttons)
+
+        //for (var i = 0; i < buttons.length; i++) {
+        //  buttons[i].addEventListener("click", manejadorCallback);
+       // }
+
+        if (resultado.innerHTML === "") {
+          resultado.innerHTML += `<li>Producto no encontrado</li>`;
+        }
+      };
+
+      formulario.addEventListener("keyup", filtrar);
+
+            
+      function manejadorCallback(evento) {
+            swal(evento.target.id, evento.target.id, "success");
+      }
+
+
+      function vidaBotones(buttons){
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].addEventListener("click", manejadorCallback);
+        }
+      }
+
+    </script>
+    
+    </script>
+  </body>
+</html>
